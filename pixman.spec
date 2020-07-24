@@ -1,10 +1,10 @@
 Name:              pixman		
-Version:	   0.38.0
-Release:           1
+Version:	   0.40.0
+Release:           0
 Summary:           Pixman is a pixel manipulation library for X and Cairo
 License:           MIT
 URL:               https://gitlab.freedesktop.org/pixman/pixman
-Source0:           https://xorg.freedesktop.org/archive/individual/lib/%{name}-%{version}.tar.bz2
+Source0:           https://xorg.freedesktop.org/archive/individual/lib/%{name}-%{version}.tar
 
 BuildRequires:     gcc meson
 
@@ -53,6 +53,12 @@ sed -i 's/120/600/' test/meson.build
 %{_libdir}/pkgconfig/*
 
 %changelog
+* Mon Apr 20 2020 openEuler Buildteam <buildteam@openeuler.org> - 0.40.0-0
+- Type:enhancement
+- Id:NA
+- SUG:NA
+- DESC:update to 0.40.0
+
 * Mon Sep 9 2019 openEuler Buildteam <buildteam@openeuler.org> - 0.38.0-1
 - Type:enhancement
 - Id:NA
