@@ -1,0 +1,11 @@
+diff -ur pixman-pixman-0.42.2/meson.build pixman-pixman-0.42.2-copy/meson.build
+--- pixman-pixman-0.42.2/meson.build	2022-11-03 01:25:48.000000000 +0800
++++ pixman-pixman-0.42.2-copy/meson.build	2023-06-12 21:00:28.572355286 +0800
+@@ -37,6 +37,7 @@
+     '-fno-strict-aliasing',
+     '-fvisibility=hidden',
+     '-Wundef',
++    '-fno-integrated-as',
+     # -ftrapping-math is the default for gcc, but -fno-trapping-math is the
+     # default for clang.  The FLOAT_IS_ZERO macro is used to guard against
+     # floating-point exceptions, however with -fno-trapping-math, the compiler
