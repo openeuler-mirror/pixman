@@ -1,0 +1,13 @@
+
+diff -ur pixman-pixman-0.42.2/test/meson.build pixman-pixman-0.42.2/test/meson.build
+--- pixman-pixman-0.42.2/test/meson.build	2022-11-03 01:25:48.000000000 +0800
++++ pixman-pixman-0.42.2/test/meson.build	2023-06-12 16:48:20.106141956 +0800
+@@ -82,7 +82,7 @@
+       link_with : libtestutils,
+       dependencies : [dep_threads, dep_openmp, idep_pixman],
+     ),
+-    timeout : 120,
++    timeout : 1200,
+     is_parallel : true,
+   )
+ endforeach

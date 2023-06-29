@@ -1,11 +1,18 @@
 Name:              pixman
 Version:           0.42.2
-Release:           1
+Release:           2
 Summary:           Pixman is a pixel manipulation library for X and Cairo
 License:           MIT
 URL:               https://gitlab.freedesktop.org/pixman/pixman
 Source0:           https://gitlab.freedesktop.org/pixman/pixman/-/archive/pixman-%{version}/pixman-pixman-%{version}.tar.bz2
-
+#%if "toolchain"=="clang"
+%ifarch aarch64
+Patch0:            fix-arm.patch
+%endif
+%ifarch riscv64
+Patch1:            fix-timeout.patch
+%endif
+#%endif
 BuildRequires:     gcc meson
 
 %description
@@ -53,6 +60,9 @@ sed -i 's/120/600/' test/meson.build
 %{_libdir}/pkgconfig/*
 
 %changelog
+* Mon Jun 12 2023 zhangxiang <zhangxiang@iscas.ac.cn> - 0.42.2-2
+- Fix clang build error
+
 * Fri Feb 03 2023 zhangpan <zhangpan@h-partners.com> - 0.42.2-1
 - update to 0.42.2
 
